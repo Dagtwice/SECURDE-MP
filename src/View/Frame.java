@@ -265,6 +265,10 @@ public class Frame extends javax.swing.JFrame {
     
      public boolean loginAction(String username, String password){
         Content.removeAll();
+        adminBtn.setVisible(false);
+        managerBtn.setVisible(false);
+        staffBtn.setVisible(false);
+        clientBtn.setVisible(false);
         ArrayList<User> users = main.sqlite.getUsers();
         int userRole=0;
         for(int nCtr = 0; nCtr < users.size(); nCtr++){
@@ -272,10 +276,18 @@ public class Frame extends javax.swing.JFrame {
                 frameView.show(Container, "homePnl"); //if user login with valid credentials proceed to home
                 switch(users.get(nCtr).getRole()){
                     case 1: break;
-                    case 2: Content.add(clientHomePnl, "clientHomePnl");break;
-                    case 3: Content.add(staffHomePnl, "staffHomePnl");break;
-                    case 4: Content.add(managerHomePnl, "managerHomePnl");break;
-                    case 5: Content.add(adminHomePnl, "adminHomePnl");break;
+                    case 2: Content.add(clientHomePnl, "clientHomePnl");
+                            adminBtn.setVisible(true);
+                            break;
+                    case 3: Content.add(staffHomePnl, "staffHomePnl");
+                            staffBtn.setVisible(true);
+                            break;
+                    case 4: Content.add(managerHomePnl, "managerHomePnl");
+                            managerBtn.setVisible(true);
+                            break;
+                    case 5: Content.add(adminHomePnl, "adminHomePnl");
+                            adminBtn.setVisible(true);
+                            break;
                 };
                 return true;
             }   
