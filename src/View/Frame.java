@@ -277,7 +277,7 @@ public class Frame extends javax.swing.JFrame {
                 switch(users.get(nCtr).getRole()){
                     case 1: break;
                     case 2: Content.add(clientHomePnl, "clientHomePnl");
-                            adminBtn.setVisible(true);
+                            clientBtn.setVisible(true);
                             break;
                     case 3: Content.add(staffHomePnl, "staffHomePnl");
                             staffBtn.setVisible(true);
