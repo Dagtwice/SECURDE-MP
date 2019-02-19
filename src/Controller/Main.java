@@ -15,7 +15,7 @@ public class Main {
         new Main().init();
     }
     
-    public void init(){
+    public void init(){  
         // Initialize a driver object
         sqlite = new SQLite();
 
