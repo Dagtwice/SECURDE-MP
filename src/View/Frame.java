@@ -228,10 +228,10 @@ public class Frame extends javax.swing.JFrame {
         frameView.show(Container, "loginPnl");
         
         Content.setLayout(contentView);
-        Content.add(adminHomePnl, "adminHomePnl");
-        Content.add(managerHomePnl, "managerHomePnl");
-        Content.add(staffHomePnl, "staffHomePnl");
-        Content.add(clientHomePnl, "clientHomePnl");
+//        Content.add(adminHomePnl, "adminHomePnl");
+//        Content.add(managerHomePnl, "managerHomePnl");
+//        Content.add(staffHomePnl, "staffHomePnl");
+//        Content.add(clientHomePnl, "clientHomePnl");
         
         this.setVisible(true);
     }
@@ -263,20 +263,22 @@ public class Frame extends javax.swing.JFrame {
     }
     
      public boolean loginAction(String username, String password){
+        Content.removeAll();
         ArrayList<User> users = main.sqlite.getUsers();
+        int userRole=0;
         for(int nCtr = 0; nCtr < users.size(); nCtr++){
-            System.out.println("===== User " + users.get(nCtr).getId() + " =====");
-            System.out.println(" Username: " + users.get(nCtr).getUsername());
-            System.out.println(" Password: " + users.get(nCtr).getPassword());
-            System.out.println(" Role: " + users.get(nCtr).getRole());
             if(users.get(nCtr).getUsername().equals(username) && users.get(nCtr).getPassword().equals(password)){
-                frameView.show(Container, "homePnl");
-                System.out.println("VALID USER");
+                frameView.show(Container, "homePnl"); //if user login with valid credentials proceed to home
+                switch(users.get(nCtr).getRole()){
+                    case 2: Content.add(clientHomePnl, "clientHomePnl");break;
+                    case 3: Content.add(staffHomePnl, "staffHomePnl");break;
+                    case 4: Content.add(managerHomePnl, "managerHomePnl");break;
+                    case 5: Content.add(adminHomePnl, "adminHomePnl");break;
+                };
                 return true;
             }   
         }
         frameView.show(Container, "loginPnl");
-        System.out.println("INVALID USER");
         return false;
     }
 
