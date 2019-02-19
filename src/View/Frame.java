@@ -1,9 +1,11 @@
 package View;
 
 import Controller.Main;
+import Model.User;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.util.ArrayList;
 import javax.swing.WindowConstants;
 
 public class Frame extends javax.swing.JFrame {
@@ -248,6 +250,34 @@ public class Frame extends javax.swing.JFrame {
     
     public void registerAction(String username, String password, String confpass){
         main.sqlite.addUser(username, password);
+    }
+    
+    public boolean checkUsername(String username){
+        ArrayList<User> users = main.sqlite.getUsers();
+        for(int nCtr = 0; nCtr < users.size(); nCtr++){
+            if(users.get(nCtr).getUsername().equals(username)){
+                return false; //username is already taken
+            }   
+        }
+        return true;
+    }
+    
+     public boolean loginAction(String username, String password){
+        ArrayList<User> users = main.sqlite.getUsers();
+        for(int nCtr = 0; nCtr < users.size(); nCtr++){
+            System.out.println("===== User " + users.get(nCtr).getId() + " =====");
+            System.out.println(" Username: " + users.get(nCtr).getUsername());
+            System.out.println(" Password: " + users.get(nCtr).getPassword());
+            System.out.println(" Role: " + users.get(nCtr).getRole());
+            if(users.get(nCtr).getUsername().equals(username) && users.get(nCtr).getPassword().equals(password)){
+                frameView.show(Container, "homePnl");
+                System.out.println("VALID USER");
+                return true;
+            }   
+        }
+        frameView.show(Container, "loginPnl");
+        System.out.println("INVALID USER");
+        return false;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
