@@ -197,6 +197,7 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_clientBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+
         frameView.show(Container, "loginPnl");
     }//GEN-LAST:event_logoutBtnActionPerformed
 
@@ -270,6 +271,7 @@ public class Frame extends javax.swing.JFrame {
             if(users.get(nCtr).getUsername().equals(username) && users.get(nCtr).getPassword().equals(password)){
                 frameView.show(Container, "homePnl"); //if user login with valid credentials proceed to home
                 switch(users.get(nCtr).getRole()){
+                    case 1: break;
                     case 2: Content.add(clientHomePnl, "clientHomePnl");break;
                     case 3: Content.add(staffHomePnl, "staffHomePnl");break;
                     case 4: Content.add(managerHomePnl, "managerHomePnl");break;
