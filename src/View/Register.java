@@ -185,6 +185,9 @@ public class Register extends javax.swing.JPanel {
         }
         
         if(validUsername && validPassword && validConfirmPassword){
+            username.setText("");
+            password.setText("");
+            confpass.setText("");
             frame.registerAction(username.getText(), passText, confpassText);
             frame.loginNav();
         }
