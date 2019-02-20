@@ -4,7 +4,6 @@ package View;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class Register extends javax.swing.JPanel {
 
     public Frame frame;
