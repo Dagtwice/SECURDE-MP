@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Github/SECURDE-MP/src/View/Frame.java</file>
-            <file>file:/D:/Github/SECURDE-MP/src/View/Login.java</file>
-            <file>file:/D:/Github/SECURDE-MP/src/Controller/Main.java</file>
-            <file>file:/D:/Github/SECURDE-MP/src/View/Register.java</file>
+            <file>file:/C:/Users/patri/OneDrive/Desktop/SECURDE-MP-master/src/Controller/SQLite.java</file>
+            <file>file:/C:/Users/patri/OneDrive/Desktop/SECURDE-MP-master/src/View/Register.java</file>
+            <file>file:/C:/Users/patri/OneDrive/Desktop/SECURDE-MP-master/src/Controller/Main.java</file>
+            <file>file:/C:/Users/patri/OneDrive/Desktop/SECURDE-MP-master/src/Model/User.java</file>
+            <file>file:/C:/Users/patri/OneDrive/Desktop/SECURDE-MP-master/src/View/Frame.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,6 +1,9 @@
 
 package View;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -75,7 +78,7 @@ public class Register extends javax.swing.JPanel {
         notMatchPass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         notMatchPass.setForeground(new java.awt.Color(255, 0, 0));
         notMatchPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        notMatchPass.setText("Password does not match");
+        notMatchPass.setText("Password does not match!");
         notMatchPass.setVisible(false);
 
         unameTaken.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -185,11 +188,11 @@ public class Register extends javax.swing.JPanel {
         }
         
         if(validUsername && validPassword && validConfirmPassword){
+            frame.registerAction(username.getText(), passText, confpassText);
+            frame.loginNav();
             username.setText("");
             password.setText("");
             confpass.setText("");
-            frame.registerAction(username.getText(), passText, confpassText);
-            frame.loginNav();
         }
     }//GEN-LAST:event_RegisterButtonActionPerformed
 

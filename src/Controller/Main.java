@@ -31,7 +31,7 @@ public class Main {
         // Add users
         sqlite.addUser("admin", "qwerty1234" , 5);
         sqlite.addUser("manager", "qwerty1234", 4);
-        sqlite.addUser("staff", "qwerty1234", 3);
+       sqlite.addUser("staff", "qwerty1234", 3);
         sqlite.addUser("client1", "qwerty1234", 2);
         sqlite.addUser("client2", "qwerty1234", 2);
         
