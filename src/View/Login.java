@@ -59,6 +59,7 @@ public class Login extends javax.swing.JPanel {
 
         password.setBackground(new java.awt.Color(240, 240, 240));
         password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password.setToolTipText("");
         password.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
         password.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +71,7 @@ public class Login extends javax.swing.JPanel {
         Invalid.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Invalid.setForeground(new java.awt.Color(255, 0, 0));
         Invalid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Invalid.setText("Incorrect username or password!");
+        Invalid.setText("Incorrect username or password");
         Invalid.setVisible(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

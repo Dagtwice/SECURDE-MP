@@ -58,6 +58,7 @@ public class Register extends javax.swing.JPanel {
 
         password.setBackground(new java.awt.Color(240, 240, 240));
         password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password.setToolTipText("<html>\n<body>\n<p>Password should have atleast 8 characters.</p>\n<p>Password should contain atleast 1 number.</p>\n<p>Password should contain atleast 1 special character.</p>\n</body>\n</html>\n\n"); // NOI18N
         password.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
         password.addActionListener(new java.awt.event.ActionListener() {
@@ -68,18 +69,19 @@ public class Register extends javax.swing.JPanel {
 
         confpass.setBackground(new java.awt.Color(240, 240, 240));
         confpass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        confpass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         confpass.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "CONFIRM PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
 
         notMatchPass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         notMatchPass.setForeground(new java.awt.Color(255, 0, 0));
         notMatchPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        notMatchPass.setText("Password does not match!");
+        notMatchPass.setText("Password does not match");
         notMatchPass.setVisible(false);
 
         unameTaken.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         unameTaken.setForeground(new java.awt.Color(255, 0, 0));
         unameTaken.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        unameTaken.setText("Username already taken!");
+        unameTaken.setText("Username already taken");
         unameTaken.setVisible(false);
 
         invalidPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -134,7 +136,6 @@ public class Register extends javax.swing.JPanel {
         );
 
         username.getAccessibleContext().setAccessibleDescription("");
-        password.getAccessibleContext().setAccessibleName("PASSWORD");
         confpass.getAccessibleContext().setAccessibleName("CONFIRM_PASSWORD");
     }// </editor-fold>//GEN-END:initComponents
 
@@ -184,6 +185,9 @@ public class Register extends javax.swing.JPanel {
         }
         
         if(validUsername && validPassword && validConfirmPassword){
+            username.setText("");
+            password.setText("");
+            confpass.setText("");
             frame.registerAction(username.getText(), passText, confpassText);
             frame.loginNav();
         }
